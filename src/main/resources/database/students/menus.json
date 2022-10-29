@@ -1,0 +1,66 @@
+[
+{
+    "_id" : ObjectId("632d089e1b95a66f1d7f34f5"),
+    "name" : "MENU ADMIN",
+    "items" : [
+        {
+            "icon" : "<i class='fa fa-bars' aria-hidden='true'></i>",
+            "name" : "Home",
+            "url" : "/home"
+        },
+        {
+            "icon" : "<i class='fa fa-bars' aria-hidden='true'></i>",
+            "name" : "Students",
+            "url" : "/students"
+        },
+        {
+            "icon" : "<i class='fa fa-bars' aria-hidden='true'></i>",
+            "name" : "Courses",
+            "url" : "/courses"
+        },
+        {
+            "icon" : "<i class='fa fa-bars' aria-hidden='true'></i>",
+            "name" : "Registrations",
+            "url" : "/registrations"
+        },
+        {
+            "icon" : "<i class='fa fa-bars' aria-hidden='true'></i>",
+            "name" : "Users",
+            "url" : "/users"
+        },
+        {
+            "icon" : "<i class='fa fa-bars' aria-hidden='true'></i>",
+            "name" : "Authentication",
+            "url" : "/auth"
+        }
+    ],
+    "roles" : [
+        "ADMIN"
+    ]
+},
+{
+    "_id" : ObjectId("632d08bd1b95a66f1d7f34f6"),
+    "name" : "MENU USER",
+    "items" : [
+        {
+            "icon" : "<i class='fa fa-bars' aria-hidden='true'></i>",
+            "name" : "Home",
+            "url" : "/home"
+        },
+        {
+            "icon" : "<i class='fa fa-bars' aria-hidden='true'></i>",
+            "name" : "Students",
+            "url" : "/students"
+        },
+        {
+            "icon" : "<i class='fa fa-bars' aria-hidden='true'></i>",
+            "name" : "Authentication",
+            "url" : "/auth"
+        }
+    ],
+    "roles" : [
+        "ADMIN",
+        "USER"
+    ]
+}
+]

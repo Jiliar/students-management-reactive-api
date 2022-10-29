@@ -1,0 +1,10 @@
+[
+{
+    "_id" : ObjectId("6327a99b5429dd7f3036f3c9"),
+    "name" : "ADMIN"
+},
+{
+    "_id" : ObjectId("632d042b7de05d0d5cf23a54"),
+    "name" : "USER"
+}
+]

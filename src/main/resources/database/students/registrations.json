@@ -1,0 +1,37 @@
+[
+{
+    "_id" : ObjectId("635c31eb47d56f7f32c993a3"),
+    "registration_date" : ISODate("2022-10-20T19:00:05.000+0000"),
+    "student" : {
+        "_id" : ObjectId("635c27a0963b0a371a9d8c6c")
+    },
+    "courses" : [
+        {
+            "_id" : ObjectId("635c28fc963b0a371a9d8c6e")
+        },
+        {
+            "_id" : ObjectId("635c290a963b0a371a9d8c6f")
+        },
+        {
+            "_id" : ObjectId("635c2913963b0a371a9d8c70")
+        }
+    ],
+    "state" : true
+},
+{
+    "_id" : ObjectId("635c325a47d56f7f32c993a4"),
+    "registration_date" : ISODate("2022-10-20T11:00:05.000+0000"),
+    "student" : {
+        "_id" : ObjectId("635c2817963b0a371a9d8c6d")
+    },
+    "courses" : [
+        {
+            "_id" : ObjectId("635c28fc963b0a371a9d8c6e")
+        },
+        {
+            "_id" : ObjectId("635c2913963b0a371a9d8c70")
+        }
+    ],
+    "state" : true
+}
+]

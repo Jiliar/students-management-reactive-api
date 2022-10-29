@@ -1,0 +1,16 @@
+[
+{
+    "_id" : ObjectId("635c27a0963b0a371a9d8c6c"),
+    "names" : "Duban Felipe",
+    "lastnames" : "Silgado Cardona",
+    "dni" : "12345678981",
+    "age" : NumberInt(25)
+},
+{
+    "_id" : ObjectId("635c2817963b0a371a9d8c6d"),
+    "names" : "Edier",
+    "lastnames" : "Sua",
+    "dni" : "1234567898",
+    "age" : NumberInt(35)
+}
+]

@@ -1,0 +1,20 @@
+[
+{
+    "_id" : ObjectId("635c28fc963b0a371a9d8c6e"),
+    "name" : "Matematicas",
+    "initials" : "MAT001",
+    "state" : true
+},
+{
+    "_id" : ObjectId("635c290a963b0a371a9d8c6f"),
+    "name" : "Lenguaje",
+    "initials" : "LEN001",
+    "state" : true
+},
+{
+    "_id" : ObjectId("635c2913963b0a371a9d8c70"),
+    "name" : "Ingles",
+    "initials" : "ING001",
+    "state" : true
+}
+]

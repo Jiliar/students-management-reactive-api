@@ -1,0 +1,50 @@
+[
+{
+    "_id" : ObjectId("6327b8ee5429dd7f3036f3dd"),
+    "username" : "admin",
+    "password" : "$2a$10$ep8KVx7c3h/JxU2QcCilOe6udoFX2WsTzW22T8khAO6TTzifze9Ve",
+    "email" : "jiliar.silgado@globant.com",
+    "status" : true,
+    "roles" : [
+        {
+            "_id" : ObjectId("6327a99b5429dd7f3036f3c9")
+        }
+    ]
+},
+{
+    "_id" : ObjectId("6327c0c87ac4b52c5116fa90"),
+    "username" : "jsilgado",
+    "password" : "$2a$10$9sfjwa0AnrXpqPX5jxJKh.V.Aeb6cxF2j/6eLE2V.MpzzCK2.FKay",
+    "status" : true,
+    "roles" : [
+        {
+            "_id" : ObjectId("6327a99b5429dd7f3036f3c9")
+        }
+    ],
+    "email" : "jiliar.silgado@gmail.com"
+},
+{
+    "_id" : ObjectId("6327d0237e07071365e7df72"),
+    "username" : "mpuerta",
+    "password" : "$2a$10$jqekYxRNgi/gG5E9s5ynO.ZyKItbvDZveNor9QDiPg.FpRJ3p7xYS",
+    "email" : "maria.puerta.sala@gmail.com",
+    "status" : true,
+    "roles" : [
+        {
+            "_id" : ObjectId("6327a99b5429dd7f3036f3c9")
+        }
+    ]
+},
+{
+    "_id" : ObjectId("63288d0b3f792255a9146e1a"),
+    "username" : "kgarcia",
+    "password" : "Sencilla2016",
+    "email" : "lisleyluna@gmail.com",
+    "status" : true,
+    "roles" : [
+        {
+            "_id" : ObjectId("6327a99b5429dd7f3036f3c9")
+        }
+    ]
+}
+]

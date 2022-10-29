@@ -1,0 +1,1343 @@
+{
+	"info": {
+		"_postman_id": "ddcd6a57-c68d-4280-879f-5206dec501f3",
+		"name": "Spring WebFlux - Students",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6961298"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Registrar Usuario [Controller]",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"jsilgado\",\r\n    \"password\": \"Sencilla2016\",\r\n    \"email\": \"maria.puerta.sala@gmail.com\",\r\n    \"status\": true,\r\n    \"roles\": [\r\n        {\"id\": \"6327a99b5429dd7f3036f3c9\"}\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{server}}:{{port}}/auth/register",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Iniciar Sesión [Controller]",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"admin\",\r\n    \"password\":\"Sencilla2016\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{server}}:{{port}}/auth/login",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reestablecer Contraseña [Controller]",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\":\"Sencilla2016\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{server}}:{{port}}/auth/restorepassword/6327b8ee5429dd7f3036f3dd",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"auth",
+								"restorepassword",
+								"6327b8ee5429dd7f3036f3dd"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Controllers",
+					"item": [
+						{
+							"name": "Listar Users [Controller]",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{server}}:{{port}}/users",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Obtener User [Controller]",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://{{server}}:{{port}}/users/63288d0b3f792255a9146e1a",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"users",
+										"63288d0b3f792255a9146e1a"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Actualizar User [Controller]",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\":\"kgarcia\",\r\n    \"password\": \"Sencilla2016\",\r\n    \"email\": \"lisleyluna@gmail.com\",\r\n    \"status\": true,\r\n    \"roles\": [\r\n        {\"id\": \"6327a99b5429dd7f3036f3c9\"}\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{server}}:{{port}}/users/63288d0b3f792255a9146e1a",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"users",
+										"63288d0b3f792255a9146e1a"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Eliminar User [Controller]",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{server}}:{{port}}/users/63288aa93f792255a9146e19",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"users",
+										"63288aa93f792255a9146e19"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Listar Users Paginado [Controller]",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "*/*"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://{{server}}:{{port}}/users/pageable?page=0&size=3",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"users",
+										"pageable"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Roles",
+			"item": [
+				{
+					"name": "Controllers",
+					"item": [
+						{
+							"name": "Obtener Rol [Controller>Hateoas]",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://{{server}}:{{port}}/roles/hateoas/6327a99b5429dd7f3036f3c9",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"roles",
+										"hateoas",
+										"6327a99b5429dd7f3036f3c9"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Obtener Rol [Controller]",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://{{server}}:{{port}}/roles/6327a99b5429dd7f3036f3c9",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"roles",
+										"6327a99b5429dd7f3036f3c9"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Listar Rol [Controller]",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://{{server}}:{{port}}/roles/",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"roles",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Registrar Rol [Controller]",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nombre\": \"USER1\",\r\n    \"menu\": {\r\n        \"id\": \"6327a96d5429dd7f3036f3c6\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{server}}:{{port}}/roles/",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"roles",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Eliminar Rol [Controller]",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{server}}:{{port}}/roles/635c2578e0703e0572155e01",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"roles",
+										"635c2578e0703e0572155e01"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Actualizar Rol [Controller]",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nombre\": \"USER\",\r\n    \"menu\": {\r\n        \"id\": \"6327a96d5429dd7f3036f3c6\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{server}}:{{port}}/roles/632891390665cc04fe076d3b",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"roles",
+										"632891390665cc04fe076d3b"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Menus",
+			"item": [
+				{
+					"name": "Controllers",
+					"item": [
+						{
+							"name": "Obtener Menu [Controller>Hateoas]",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://{{server}}:{{port}}/menus/hateoas/632d089e1b95a66f1d7f34f5",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"menus",
+										"hateoas",
+										"632d089e1b95a66f1d7f34f5"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Obtener Menu [Controller]",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://{{server}}:{{port}}/menus/632d089e1b95a66f1d7f34f5",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"menus",
+										"632d089e1b95a66f1d7f34f5"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Listar Menues [Controller]",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://{{server}}:{{port}}/menus",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"menus"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Listar Menues by Role[Controller]",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://{{server}}:{{port}}/menus/userauth",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"menus",
+										"userauth"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Registrar Menu [Controller]",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "    {\r\n        \"nombre\": \"MENU USERS\",\r\n        \"items\": [\r\n            {\r\n                \"icono\": \"<i class='fa fa-bars' aria-hidden='true'></i>\",\r\n                \"nombre\": \"Home\",\r\n                \"url\": \"/home\"\r\n            },\r\n            {\r\n                \"icono\": \"<i class='fa fa-bars' aria-hidden='true'></i>\",\r\n                \"nombre\": \"Dishes\",\r\n                \"url\": \"/dishes\"\r\n            },\r\n            {\r\n                \"icono\": \"<i class='fa fa-bars' aria-hidden='true'></i>\",\r\n                \"nombre\": \"Customers\",\r\n                \"url\": \"/customers\"\r\n            },\r\n            {\r\n                \"icono\": \"<i class='fa fa-bars' aria-hidden='true'></i>\",\r\n                \"nombre\": \"Invoices\",\r\n                \"url\": \"/invoices\"\r\n            },\r\n            {\r\n                \"icono\": \"<i class='fa fa-bars' aria-hidden='true'></i>\",\r\n                \"nombre\": \"Users\",\r\n                \"url\": \"/users\"\r\n            },\r\n            {\r\n                \"icono\": \"<i class='fa fa-bars' aria-hidden='true'></i>\",\r\n                \"nombre\": \"Authentication\",\r\n                \"url\": \"/auth\"\r\n            }\r\n        ],\r\n        \"roles\": [\r\n            \"ADMIN\"\r\n        ]\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{server}}:{{port}}/menus",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"menus"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Eliminar Menu [Controller]",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJ0ZXN0IjoibXB1ZXJ0YSIsInJvbGVzIjpbIkFETUlOIl0sInN1YiI6Im1wdWVydGEiLCJpYXQiOjE2NjM2MDcxNTYsImV4cCI6MTY2MzYwOTk1Nn0.QhpzkcaMuolpjVfZUBYqg_c-nuAco9Dp63paR053rjl3Ag8Tb0Dn5nRXe86O2IzEZTYCMMvIKp0v-0GLy4P4UA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{server}}:{{port}}/menus/6328a2900665cc04fe076d3f",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"menus",
+										"6328a2900665cc04fe076d3f"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Actualizar Menu [Controller]",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "    {\r\n        \"nombre\": \"MENU USER\",\r\n        \"items\": [\r\n            {\r\n                \"icono\": \"<i class='fa fa-bars' aria-hidden='true'></i>\",\r\n                \"nombre\": \"Home\",\r\n                \"url\": \"/home\"\r\n            },\r\n            {\r\n                \"icono\": \"<i class='fa fa-bars' aria-hidden='true'></i>\",\r\n                \"nombre\": \"Dishes\",\r\n                \"url\": \"/dishes\"\r\n            },\r\n            {\r\n                \"icono\": \"<i class='fa fa-bars' aria-hidden='true'></i>\",\r\n                \"nombre\": \"Authentication\",\r\n                \"url\": \"/auth\"\r\n            }\r\n        ],\r\n        \"roles\": [\r\n            \"ADMIN\",\r\n            \"USER\"\r\n        ]\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{server}}:{{port}}/menus/632d08bd1b95a66f1d7f34f6",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"menus",
+										"632d08bd1b95a66f1d7f34f6"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Students",
+			"item": [
+				{
+					"name": "Controllers",
+					"item": [
+						{
+							"name": "Obtener Estudiante [Controller>Hateoas]",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://{{server}}:{{port}}/students/hateoas/63115fe1588f9f73a906615a",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"students",
+										"hateoas",
+										"63115fe1588f9f73a906615a"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Obtener Estudiante [Controller]",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://{{server}}:{{port}}/students/63115fe1588f9f73a906615a",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"students",
+										"63115fe1588f9f73a906615a"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Listar Estudiantes [Controller]",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://{{server}}:{{port}}/students",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"students"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Registrar Estudiante [Controller]",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nombres\": \"Edier\",\r\n    \"apellidos\": \"Sua\",\r\n    \"dni\": \"1234567898\",\r\n    \"edad\": \"35\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{server}}:{{port}}/students",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"students"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Eliminar Estudiante [Controller]",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{server}}:{{port}}/students/631aa28a689baf17861cca79",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"students",
+										"631aa28a689baf17861cca79"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Actualizar Estudiante [Controller]",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nombres\": \"Duban Felipe\",\r\n    \"apellidos\": \"Silgado Cardona\",\r\n    \"dni\": \"12345678981\",\r\n    \"edad\": \"25\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{server}}:{{port}}/students/635c27a0963b0a371a9d8c6c",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"students",
+										"635c27a0963b0a371a9d8c6c"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Registrations",
+			"item": [
+				{
+					"name": "Controllers",
+					"item": [
+						{
+							"name": "Obtener Matricula [Controller>Hateoas]",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://{{server}}:{{port}}/registrations/hateoas/63115fe1588f9f73a906615a",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"registrations",
+										"hateoas",
+										"63115fe1588f9f73a906615a"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Obtener Matricula [Controller]",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://{{server}}:{{port}}/registrations/63115fe1588f9f73a906615a",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"registrations",
+										"63115fe1588f9f73a906615a"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Listar Matricula [Controller]",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://{{server}}:{{port}}/registrations",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"registrations"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Registrar Matricula [Controller]",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"fecha_matricula\" : \"2022-10-20T06:00:05\",\r\n    \"estudiante\" : {\r\n        \"id\" : \"635c2817963b0a371a9d8c6d\"\r\n    },\r\n    \"cursos\" : [\r\n        {\"id\": \"635c28fc963b0a371a9d8c6e\" },\r\n        {\"id\": \"635c290a963b0a371a9d8c6f\" },\r\n        {\"id\": \"635c2913963b0a371a9d8c70\" }\r\n    ],\r\n    \"estado\" : true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{server}}:{{port}}/registrations",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"registrations"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Eliminar Matricula [Controller]",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{server}}:{{port}}/registrations/631aa28a689baf17861cca79",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"registrations",
+										"631aa28a689baf17861cca79"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Actualizar Matricula [Controller]",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Cookie\",\r\n    \"price\": 4.5,\r\n    \"status\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{server}}:{{port}}/registrations/630ecf6a61f3d55278ea6da6",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"registrations",
+										"630ecf6a61f3d55278ea6da6"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Courses",
+			"item": [
+				{
+					"name": "Controllers",
+					"item": [
+						{
+							"name": "Obtener Curso [Controller>Hateoas]",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://{{server}}:{{port}}/courses/hateoas/630ebaecd7d2460e326e7eb8",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"courses",
+										"hateoas",
+										"630ebaecd7d2460e326e7eb8"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Obtener Curso [Controller]",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://{{server}}:{{port}}/courses/635c28fc963b0a371a9d8c6e",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"courses",
+										"635c28fc963b0a371a9d8c6e"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Listar Cursos [Controller]",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://{{server}}:{{port}}/courses",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"courses"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Registrar Curso [Controller]",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nombre\" : \"Ingles\",\r\n    \"siglas\" : \"ING001\",\r\n    \"estado\" : true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{server}}:{{port}}/courses",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"courses"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Eliminar Curso [Controller]",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{server}}:{{port}}/courses/631f56908fe2f1368185f418",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"courses",
+										"631f56908fe2f1368185f418"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Actualizar Curso [Controller]",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"description\" : \"User pays with Debit Card\",\r\n    \"observation\" : \"No Observation\",\r\n    \"customer\": {\r\n        \"id\" : \"631e807fbcc18333ff676f52\" \r\n    },\r\n    \"user\": {\r\n        \"id\" : \"6317f82ff6555450d99f1951\"\r\n    },\r\n    \"invoice_items\" : [\r\n        {\"quantity\": 5, \"dish\": { \"id\" : \"631aa2b1689baf17861cca7a\"} },\r\n        {\"quantity\": 4, \"dish\": { \"id\" : \"631f56678fe2f1368185f417\"} }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{server}}:{{port}}/courses/631f5a0fa0bc2e2b4c84bef4",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"courses",
+										"631f5a0fa0bc2e2b4c84bef4"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"/*let server = pm.environment.get(\"server\");",
+					"let port = pm.environment.get(\"port\");",
+					"let username = pm.environment.get(\"username\");",
+					"let password = pm.environment.get(\"password\");",
+					"let uri = '/auth/login';",
+					"const options = {",
+					"    url: \"http://\"+server+\":\"+port+uri,",
+					"    method: 'POST',",
+					"    header: { 'content-type': 'application/json' },",
+					"    body: {",
+					"        mode: 'raw',",
+					"        raw: JSON.stringify(",
+					"            {",
+					"                \"username\":username,",
+					"                \"password\":password",
+					"            }",
+					"        )",
+					"",
+					"    }",
+					"};",
+					"",
+					"pm.sendRequest(options, function (err, res) {",
+					"    var jsonData = res.json();",
+					"    if (err) {",
+					"        console.log(err);",
+					"    }",
+					"    else {",
+					"        pm.environment.set(\"token\", \"Bearer \"+jsonData.token);",
+					"    }",
+					"});*/"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"/*pm.test(\"Status code is 200\", function () {",
+					"    pm.response.to.have.status(200);",
+					"});*/"
+				]
+			}
+		}
+	]
+}
